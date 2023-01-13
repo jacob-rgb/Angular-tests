@@ -1,0 +1,14 @@
+<div
+  ngDraggable
+  #draggableItem
+  [zIndex]="'100'"
+  [position]="position"
+  [preventDefaultEvent]="true"
+  class="draggable-item"
+  [inBounds]="true"
+  [bounds]="dragBounds!"
+  (endOffset)="onMoveEnd($event)"
+  (edge)="edge($event)"
+>
+  <p>hola soy draggable :)</p>
+</div>
