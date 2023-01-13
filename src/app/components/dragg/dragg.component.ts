@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Inject } from '@angular/core';
 import { DragService } from 'src/app/services/drag.service';
 import { Subscription } from 'rxjs'
 import { IPosition } from 'angular2-draggable/lib/models/position';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-dragg',
@@ -24,13 +25,16 @@ export class DraggComponent implements OnInit {
   private subscriptions: Subscription[] = []
 
   constructor(
+    @Inject(DOCUMENT) private document: Document,
     private dragService: DragService
   ) { }
 
   ngOnInit(): void {
     this.subscriptions.push(
       this.dragService.boundsContainer$.subscribe(res => {
-        this.dragBounds = res;
+        this.dragBounds = document.body;
+        console.log(this.dragBounds);
+        
       })
     )
   }
