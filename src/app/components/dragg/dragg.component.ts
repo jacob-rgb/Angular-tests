@@ -40,7 +40,7 @@ export class DraggComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-      this.dragItemStyles = getComputedStyle(this.draggableItem.nativeElement);
+      this.dragItemStyles = getComputedStyle(this.draggableItem?.nativeElement);
   }
 
 
