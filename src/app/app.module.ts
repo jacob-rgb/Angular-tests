@@ -7,18 +7,22 @@ import { Tarjeta3DComponent } from './components/tarjeta3-d/tarjeta3-d.component
 import { DraggComponent } from './components/dragg/dragg.component';
 import { AngularDraggableModule } from 'angular2-draggable';
 import { MapComponent } from './components/map/map.component';
+import { LiquidMenuComponent } from './components/liquid-menu/liquid-menu.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
     Tarjeta3DComponent,
     DraggComponent,
-    MapComponent
+    MapComponent,
+    LiquidMenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularDraggableModule
+    AngularDraggableModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
